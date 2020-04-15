@@ -12,7 +12,7 @@ print("Starting graph generation .")
 
 for x in range(w):
     graph[x][x] = random.randint(0, 2)
-    print(".")
+    #print(".")
     if graph[x][x] == 0:
         listZ.append(x);
         for y in listZ:
@@ -30,7 +30,7 @@ for x in range(w):
                 graph[x][y] = 0
     # print graph[x][x];
 
-print("\nGraph Generated.")
+print("Graph Generated.")
 message = input("What is your message?\n")
 
 numMessage = ""
@@ -44,6 +44,7 @@ while temp != 0:
     temp = int(temp/3)
     x += 1
 
+print("{*} Message converted to number")
 colorEncoding = random.randint(0, 2)
 startingPoint = random.randint(0, w)
 distance = random.randint(0, 1000)
@@ -59,9 +60,7 @@ while i < distance:
         x = 0
     if graph[startingPoint + x][startingPoint + x] == colorEncoding:
         i += 1
-        x += 1
-    else:
-        x += 1
+    x += 1
 
 y = 0
 graph[x][x] = 0
@@ -77,7 +76,7 @@ for z in range(w):
             print(graph[z][y], end="")
 
 #print(graph)
-# print graph[1][3];
+#print graph[1][3];
 #colorEncoding == graph[startingPoint][startingPoint]
 #i += 1
 #graph[startingPoint[0]][startingPoint[1]] = str(remainder[i])
