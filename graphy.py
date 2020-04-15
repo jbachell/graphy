@@ -1,3 +1,6 @@
+#John Bacheller
+#MY CODE thank you very much
+
 import random
 
 w, h = 10, 10
