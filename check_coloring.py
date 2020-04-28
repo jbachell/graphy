@@ -1,6 +1,8 @@
 #John Bacheller
 #MY CODE thank you very much
 
+#TODO make the graph symetric maybe? also print format to match mathematica
+
 import itertools
 
 def is_valid(n, g):
@@ -23,16 +25,19 @@ checkingColoring = int(temp)
 w, h = int(numVert), int(numVert)
 graph = [[0 for x in range(w)] for y in range(h)]
 
-for x in range(w):
-    if checkingColoring == 1:
-        temp = input("Enter vertex " + str(x + 1) + " color:")
-        graph[x][x] = int(temp)
-    print("Enter what this vertex(" + str(x + 1) + ") is connected to, separated by spaces: ")
-    connectedEdges = list(map(int, input().split()))
-    connectedEdges.sort()
-    for y in connectedEdges:
-        if y - 1 > x:
-            graph[y - 1][x] = 1
+# for x in range(w):
+#     if checkingColoring == 1:
+#         temp = input("Enter vertex " + str(x + 1) + " color:")
+#         graph[x][x] = int(temp)
+#     print("Enter what this vertex(" + str(x + 1) + ") is connected to, separated by spaces: ")
+#     connectedEdges = list(map(int, input().split()))
+#     connectedEdges.sort()
+#     for y in connectedEdges:
+#         if y - 1 > x:
+#             graph[y - 1][x] = 1
+
+graph = [[0,1,1,1,1],[1,0,1,1,1],[1,1,0,1,1],[1,1,0,0,1],[0,1,1,1,2]]
+
 
 #OKAY THE GRAPH WAS TAKEN IN
 if checkingColoring == 1:
@@ -48,7 +53,7 @@ if checkingColoring == 1:
         print("\nGraph is correct")
 #TRYING TO FIND A COLORING
 if checkingColoring == 0:
-    minColoring = 3#w
+    minColoring = 3 #w
     #setOfColors = range(minColoring)
     #colorPerm = itertools.product(range(minColoring), repeat=minColoring)
     #print(colorPerm)
