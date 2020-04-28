@@ -3,7 +3,7 @@
 
 import random
 
-w, h = 10, 10
+w, h = 5, 5
 graph = [[1 for x in range(w)] for y in range(h)]
 
 listZ = []
@@ -71,12 +71,22 @@ for y in remainder:
     graph[x][x] = y + graph[x][x]
 
 for z in range(w):
-    for y in range(h):
-        if graph[z][y] == graph[x][x]:
-            for n in remainder:
-                print(n, end="")
-        else:
+    print("[", end="")
+    for y in range(w):
+        if y == (w-1):
             print(graph[z][y], end="")
+        elif y != z:
+            print(str(graph[z][y]) + ",", end="")
+        else:
+            print(str(0) + ",", end="")
+    print("],", end="")
+# for z in range(w):
+#     for y in range(h):
+#         if graph[z][y] == graph[x][x]:
+#             for n in remainder:
+#                 print(n, end="")
+#         else:
+#             print(graph[z][y], end="")
 
 #print(graph)
 #print graph[1][3];
